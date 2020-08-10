@@ -32,13 +32,6 @@ server.post("/validate", async (req, res) => {
     } = req.body;
     if (req.body) {
       console.log(req.body);
-      await jsonFile.writeFile(
-      "success.json", req.body,
-        {
-          flag: "a",
-          EOL: ",\r\n",
-        }
-      );
       res.status(200).json({
         message: "response reached server",
         data: req.body,

@@ -8,7 +8,7 @@ server.listen(3000, () => {
   console.log("server running on port 3000");
 });
 server.get('/', (req,res)=> {
-    res.send('server running')
+    res.status(200).json('server running')
 })
 server.post("/validate", async (req, res) => {
   try {

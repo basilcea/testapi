@@ -1,10 +1,13 @@
 const express = require("express");
 const jsonFile = require("jsonfile");
+const dotenv = require('dotenv')
+dotenv.config()
 
 const server = express();
 server.use(express.urlencoded({extended:true}))
+const port = process.env.port || 3000
 
-server.listen(3000, () => {
+server.listen(port, () => {
   console.log("server running on port 3000");
 });
 server.get('/', (req,res)=> {
